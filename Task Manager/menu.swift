@@ -10,6 +10,7 @@ import Foundation
 
 class Menu{
     
+    var manager = Manager()
     
     var shouldQuit = false
     
@@ -45,16 +46,16 @@ class Menu{
     func handleInput(_ input: String) {
         switch input {
         case "1":
-            print("invalid input")
+            manager.addTask()
             help()
         case "2":
-            print("invalid input")
+            manager.removeTask()
             help()
         case "3":
-            print("invalid input")
+            manager.listAvailableTasks()
             help()
         case "4":
-            print("invalid input")
+            manager.listUnavailableTasks()
             help()
         case "5":
             print("invalid input")

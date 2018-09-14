@@ -11,6 +11,7 @@
 		36069AD121496741000AF048 /* menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36069AD021496741000AF048 /* menu.swift */; };
 		36069AD32149976C000AF048 /* add tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36069AD22149976C000AF048 /* add tasks.swift */; };
 		36069AD52149987B000AF048 /* manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36069AD42149987B000AF048 /* manager.swift */; };
+		365E2951214C348700F218EC /* task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365E2950214C348700F218EC /* task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		36069AD021496741000AF048 /* menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu.swift; sourceTree = "<group>"; };
 		36069AD22149976C000AF048 /* add tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "add tasks.swift"; sourceTree = "<group>"; };
 		36069AD42149987B000AF048 /* manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = manager.swift; sourceTree = "<group>"; };
+		365E2950214C348700F218EC /* task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				36069AC9214963FF000AF048 /* main.swift */,
 				36069AD021496741000AF048 /* menu.swift */,
 				36069AD22149976C000AF048 /* add tasks.swift */,
+				365E2950214C348700F218EC /* task.swift */,
 				36069AD42149987B000AF048 /* manager.swift */,
 			);
 			path = "Task Manager";
@@ -132,6 +135,7 @@
 				36069AD32149976C000AF048 /* add tasks.swift in Sources */,
 				36069ACA214963FF000AF048 /* main.swift in Sources */,
 				36069AD52149987B000AF048 /* manager.swift in Sources */,
+				365E2951214C348700F218EC /* task.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
