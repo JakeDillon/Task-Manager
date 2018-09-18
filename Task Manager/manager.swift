@@ -11,7 +11,7 @@ import Foundation
 class Manager {
     
     
-    private var taskArray: [Task] = [Task(taskName: "cook supper", priority: 7), Task(taskName: "feed dog", priority: 1), Task(taskName: "listen to music", priority: 9), Task(taskName: "buy food", priority: 3), Task(taskName: "kick neighbor's cat", priority: 10)]
+    private var taskArray: [Task] = [Task(taskName: "cook supper", priority: "low"), Task(taskName: "feed dog", priority: "low"), Task(taskName: "listen to music", priority: "low"), Task(taskName: "buy food", priority: "average"), Task(taskName: "kick neighbor's cat", priority: "high")]
     
     func addTask() {
         
@@ -26,7 +26,7 @@ class Manager {
         
     
         
-        let newTaskObject = Task(taskName: newTask, priority: <#T##Int#>)
+        let newTaskObject = Task(taskName: newTask, priority: String)
         
     }
     func removeTask() {
@@ -77,6 +77,72 @@ class Manager {
         
     }
     
+    func incompleteTask() { //incompleted task
+        
+        for index in 0..<taskArray.count {
+            
+            if taskArray[index].checkedIn == true {
+                print("\(index). \(taskArray[index].taskName)")
+            }
+        }
+        print("mark incompleted task")
+        
+        var userInput = Int(readLine()!)
+        
+        while userInput == nil {
+            print("invalid input, please enter a usable index")
+            userInput = Int(readLine()!)
+        }
+        if taskArray[userInput!].checkedIn == false {
+            print("game is already checked out")
+        } else {
+            
+            taskArray[userInput!].checkedIn = false
+            
+            let currentCalendar = Calendar.current
+            let dueDate = currentCalendar.date(byAdding: .day, value: 14, to: Date())
+            taskArray[userInput!].dueDate = dueDate
+            for task in taskArray {
+                if task.checkedIn == false {
+                    print(task.taskName)
+                    print("Y")
+                    if let dueDate = task.dueDate {
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "MM-dd-yyyy"
+                        print(dateFormatter.string(from: dueDate))
+                    }
+                }
+            }
+        }
+    }
+    func completeTask() { //completed task
+        for index in 0..<taskArray.count {
+            if taskArray[index].checkedIn == false {
+                
+                
+                print("\(index). \(taskArray[index].taskName)")
+            }
+        }
+        print("please enter the index of your completed task")
+        var userInput = Int(readLine()!)
+        
+        while userInput == nil {
+            print("invalid input, please enter a usable index")
+            userInput = Int(readLine()!)
+        }
+        if taskArray[userInput!].checkedIn == true {
+            print("task is already completed")
+        } else {
+            taskArray[userInput!].checkedIn = true
+            taskArray[userInput!].dueDate = nil
+            print("Your task has been completed")
+        }
+    }
+
+
+
+
+
 }
 
 
