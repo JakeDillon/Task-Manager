@@ -24,9 +24,9 @@ class Manager {
             newTask = readLine()!
         }
         
-    
+        var dueDate: Date?
         
-        let newTaskObject = Task(taskName: newTask, priority: String)
+        
         
     }
     func removeTask() {
@@ -77,7 +77,7 @@ class Manager {
         
     }
     
-    func incompleteTask() { //incompleted task
+    func completeTask() { //completed task
         
         for index in 0..<taskArray.count {
             
@@ -115,7 +115,7 @@ class Manager {
             }
         }
     }
-    func completeTask() { //completed task
+    func incompleteTask() { //incompleted task
         for index in 0..<taskArray.count {
             if taskArray[index].checkedIn == false {
                 
@@ -139,7 +139,15 @@ class Manager {
         }
     }
 
-
+    func listAvailableTaks() {
+        
+        for task in taskArray {
+            if task.checkedIn{
+                print(task.taskName)
+            }
+        }
+        
+    }
 
 
 

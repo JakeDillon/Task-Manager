@@ -58,13 +58,14 @@ class Menu{
             manager.listUnavailableTasks()
             help()
         case "5":
-            print("invalid input")
+            manager.listAvailableTasks()
             help()
         case "6":
-            print("invalid input")
+            manager.completeTask()
             help()
         case "7":
-            print("invalid input")
+            manager.incompleteTask()
+            help()
         case "8":
             help()
         case "9":

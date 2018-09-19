@@ -15,23 +15,6 @@ class Task {
     var checkedIn = true
     
     var dueDate: Date?
-    var taskPriority: Task.PriorityChoice!
-    
-    let priorityInput = getPriority()
-    
-    if priorityInput == "High" {
-    
-    taskPriority = .High
-    
-    } else if priorityInput == "Average" {
-    
-    taskPriority = .Average
-    
-    } else if priorityInput == "Low" {
-    taskPriority = .Low
-    }
-    
-    taskArray.append(Task(title: taskName, description: taskDescription, priority: taskPriority))
     
     func getPriority() -> String {
         
