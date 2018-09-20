@@ -11,7 +11,7 @@ import Foundation
 class Manager {
     
     
-    private var taskArray: [Task] = [Task(taskName: "cook supper", priority: "Low"), Task(taskName: "feed dog", priority: "Low"), Task(taskName: "listen to music", priority: "Low"), Task(taskName: "buy food", priority: "Average"), Task(taskName: "kick neighbor's cat", priority: "High")]
+    private var taskArray: [Task] = [Task(taskName: "cook supper", priority: .low), Task(taskName: "feed dog", priority: .low), Task(taskName: "listen to music", priority: .low), Task(taskName: "buy food", priority: .average), Task(taskName: "kick neighbor's cat", priority: .high)]
     
     func addTask() {
         
