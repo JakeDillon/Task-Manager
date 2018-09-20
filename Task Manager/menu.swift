@@ -35,8 +35,8 @@ class Menu{
     1. Add New Taks
     2. Delete Task
     3. List All Tasks
-    4. Uncompleted Tasks
-    5. Completed Tasks
+    4. Completed Tasks
+    5. Uncompleted Tasks
     6. Mark Task as Complete
     7. Mark Task as Incomplete
     8. Help

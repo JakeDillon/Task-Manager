@@ -24,7 +24,7 @@ class Manager {
             newTask = readLine()!
         }
         var taskPriority : Task.priorityChoice!
-        
+        print("state priority of task: High, Average, Low")
         let priorityInput = getPriority()
         if priorityInput == "High" {
             
@@ -45,19 +45,16 @@ class Manager {
     }
     func removeTask() {
         
-        var input: String? = nil
-        
-        repeat {
-            let line = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines)
+        for (i, task) in taskArray.enumerated() {
             
-            if line != "" {
-                input = line
-            } else {
-                print("Invalid Input")
-            }
-        } while input == nil
+            print("\(i) \(task.taskName)")
+            
+        }
         
-       
+        print("\n")
+        
+        print("select number of task you want to remove")
+        
             var userInput = Int(readLine()!)
             
             while userInput == nil {
@@ -108,7 +105,7 @@ class Manager {
             userInput = Int(readLine()!)
         }
         if taskArray[userInput!].checkedIn == false {
-            print("game is already checked out")
+            print("task is already completed")
         } else {
             
             taskArray[userInput!].checkedIn = false
@@ -119,7 +116,7 @@ class Manager {
             for task in taskArray {
                 if task.checkedIn == false {
                     print(task.taskName)
-                    print("Y")
+                    print("finish task by")
                     if let dueDate = task.dueDate {
                         let dateFormatter = DateFormatter()
                         dateFormatter.dateFormat = "MM-dd-yyyy"
@@ -149,7 +146,7 @@ class Manager {
         } else {
             taskArray[userInput!].checkedIn = true
             taskArray[userInput!].dueDate = nil
-            print("Your task has been completed")
+            print("Your task is not completed")
         }
     }
 
