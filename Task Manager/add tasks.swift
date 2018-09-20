@@ -10,35 +10,20 @@ import Foundation
 class Task {
     
     var taskName: String
-    var priority: String
+    var priority: priorityChoice
+    enum priorityChoice: Int{
+        case high = 1
+        case average
+        case low
+    }
     
     var checkedIn = true
     
     var dueDate: Date?
     
-    func getPriority() -> String {
-        
-        var input: String? = nil
-        
-        repeat {
-            
-            let line = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            if line == "Low" || line == "Average" || line == "High"  {
-                
-                input = line
-                
-            } else {
-                
-                print("Invalid input")
-            }
-            
-        } while input == nil
-        
-        return input!
-    }
     
-    init(taskName: String, priority: String) {
+    
+    init(taskName: String, priority: priorityChoice) {
         self.taskName = taskName
         self.priority = priority
         

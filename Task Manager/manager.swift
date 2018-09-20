@@ -11,7 +11,7 @@ import Foundation
 class Manager {
     
     
-    private var taskArray: [Task] = [Task(taskName: "cook supper", priority: "low"), Task(taskName: "feed dog", priority: "low"), Task(taskName: "listen to music", priority: "low"), Task(taskName: "buy food", priority: "average"), Task(taskName: "kick neighbor's cat", priority: "high")]
+    private var taskArray: [Task] = [Task(taskName: "cook supper", priority: "Low"), Task(taskName: "feed dog", priority: "Low"), Task(taskName: "listen to music", priority: "Low"), Task(taskName: "buy food", priority: "Average"), Task(taskName: "kick neighbor's cat", priority: "High")]
     
     func addTask() {
         
@@ -23,10 +23,24 @@ class Manager {
             print("invalid task please try again")
             newTask = readLine()!
         }
+        var taskPriority : Task.priorityChoice!
         
+        let priorityInput = getPriority()
+        if priorityInput == "High" {
+            
+            taskPriority = .high
+            
+        } else if priorityInput == "Average" {
+            
+            taskPriority = .average
+            
+        } else if priorityInput == "Low" {
+            
+            taskPriority = .low
+        }
         var dueDate: Date?
         
-        
+        taskArray.append(Task(taskName: newTask, priority: taskPriority))
         
     }
     func removeTask() {
@@ -50,7 +64,7 @@ class Manager {
                 print("invalid input, please use a usable index")
                 userInput = Int(readLine()!)
             }
-            taskArray.remove(at: userInput!)
+        taskArray.remove(at: userInput!)
         }
     
     func listAvailableTasks() {
@@ -148,7 +162,27 @@ class Manager {
         }
         
     }
-
+    func getPriority() -> String {
+        
+        var input: String? = nil
+        
+        repeat {
+            
+            let line = readLine()!.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            if line == "Low" || line == "Average" || line == "High"  {
+                
+                input = line
+                
+            } else {
+                
+                print("Invalid input")
+            }
+            
+        } while input == nil
+        
+        return input!
+    }
 
 
 }
